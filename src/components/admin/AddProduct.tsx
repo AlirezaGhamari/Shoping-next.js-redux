@@ -18,7 +18,7 @@ function AddProduct() {
         add
       </button>
     </div>
-  );
+  )
 }
 
 export default AddProduct;
