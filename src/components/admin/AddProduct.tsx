@@ -15,7 +15,7 @@ function AddProduct() {
           });
         }}
       >
-        add
+        add products
       </button>
     </div>
   )
