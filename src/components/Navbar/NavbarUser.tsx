@@ -1,9 +1,10 @@
 import React from 'react'
+import IconAdmin from './IconAdmin'
 
 function NavbarUser() {
   return (
     <div>
-      NavbarUser
+      <IconAdmin/>
     </div>
   )
 }

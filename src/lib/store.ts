@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import counterReducer from '../lib/slices/counterSlice'
+import loginReducer from "../lib/slices/loginSlice"
 export const makeStore = () => {
   return configureStore({
     reducer: {
-        counterState:counterReducer
+        counterState:counterReducer,
+        loginState:loginReducer
         
     },
   })

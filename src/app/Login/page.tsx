@@ -1,12 +1,12 @@
-import Navbar from "@/components/Navbar/Navbar";
-import React from "react";
+import Login from '@/components/login/Login'
+import React from 'react'
 
 function page() {
   return (
-    <div>
-      log
+    <div className='' >
+      <Login/>
     </div>
-  );
+  )
 }
 
-export default page;
+export default page

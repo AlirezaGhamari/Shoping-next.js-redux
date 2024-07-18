@@ -19,10 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-white">
       <body className={inter.className}>
-          <StoreProvider>
-            <Navbar  />
-            {children}
-          </StoreProvider>
+        <StoreProvider>
+          <Navbar />
+          {children}
+        </StoreProvider>
       </body>
     </html>
   );
