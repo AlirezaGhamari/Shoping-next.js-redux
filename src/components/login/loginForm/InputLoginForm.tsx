@@ -1,9 +1,6 @@
-import { useAppSelector } from "@/lib/hook";
 import React from "react";
 
 function InputLoginForm() {
-  const username = useAppSelector((state) => state.loginState.username);
-  const password = useAppSelector((state) => state.loginState.password);
 
 
   return (
