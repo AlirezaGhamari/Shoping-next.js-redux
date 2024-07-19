@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function AdminContent() {
-  return (
-    <div className=' w-full'>
-      AdminContent
-    </div>
-  )
+  return <div className=" w-full">AdminContent</div>;
 }
 
-export default AdminContent
+export default AdminContent;
