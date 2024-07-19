@@ -11,13 +11,16 @@ function InputLoginForm() {
       <div>
         <input
           type="text"
-          className="w-full rounded-lg bg-[#f8d3c8] outline-[#eca8a4] p-1 "
+          placeholder="Username"
+          className="w-full rounded-lg bg-[#73879c] outline-[#eca8a4] p-1 text-[15px] placeholder-white"
         />
       </div>
       <div>
         <input
           type="password"
-          className="w-full rounded-lg bg-[#f8d3c8] outline-[#eca8a4] p-1"
+          placeholder="password"
+
+          className="w-full rounded-lg bg-[#73879c] outline-[#eca8a4] p-1 text-[15px]  placeholder-white"
         />
       </div>
     </div>

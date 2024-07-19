@@ -20,7 +20,6 @@ export default function RootLayout({
     <html lang="en" className="bg-white">
       <body className={inter.className}>
         <StoreProvider>
-          <Navbar />
           {children}
         </StoreProvider>
       </body>

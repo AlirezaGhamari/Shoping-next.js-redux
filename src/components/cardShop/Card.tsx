@@ -12,7 +12,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ price, title, images, category }) => {
   return (
-    <div className="bg-white h-[500px] w-[100%] p-2 cursor-pointer  hover:transition-colors hover:duration-300 hover:bg-[#ff4955] ">
+    <div className="bg-white h-[500px] w-[100%] p-2 cursor-pointer  hover:transition-colors hover:duration-300 hover:bg-[#2a3f54] hover:text-white ">
         <ImageCard images={images} />
         <TitleCards title={title} />
         <CategoryCards category={category} />

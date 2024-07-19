@@ -4,7 +4,7 @@ interface PriceCardsProps {
 }
 
 const PriceCards: React.FC<PriceCardsProps> = ({ price }) => {
-  return <div className="text-[18px] text-black">{price}</div>;
+  return <div className="text-[18px] ">{price}</div>;
 };
 
 export default PriceCards;

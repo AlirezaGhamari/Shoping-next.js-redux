@@ -5,7 +5,7 @@ import LoginForm from "./loginForm/LoginForm";
 
 function Login() {
   return (
-    <div className=" w-[1000px]  grid grid-cols-10  border">
+    <div className=" w-[1000px]  grid grid-cols-10  border border-[#2a3f54]">
       <div className="col-span-6 ">
         <LoginImage />
       </div>
