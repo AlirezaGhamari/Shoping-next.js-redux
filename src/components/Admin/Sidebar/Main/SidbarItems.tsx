@@ -26,7 +26,9 @@ const SidbarItems = () => {
           iconDown={<FaChevronDown />}
           isActive={i.isActive}
         />
+        
       ))}
+
     </div>
   );
 };
