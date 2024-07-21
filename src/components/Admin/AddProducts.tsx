@@ -2,6 +2,7 @@ import { useAppDispatch, useAppSelector } from "@/lib/hook";
 import { addProducts } from "@/lib/slices/productsSlice";
 import React, { useState } from "react";
 import Loading from "../Loading";
+import SuccessModal from "../SuccessModal"
 
 function AddProducts() {
   const dispatch = useAppDispatch();
@@ -54,6 +55,7 @@ function AddProducts() {
       </button>
       
       {mesage === "loading" ? <Loading /> : ""}
+      {/* {mesage === "fulfilled" ? <SuccessModal /> : ""} */}
 
 
     </div>
