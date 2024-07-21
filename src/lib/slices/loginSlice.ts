@@ -45,7 +45,6 @@ export const loginSlice = createSlice({
       })
       .addCase(auth.rejected, (state, { payload }: any) => {
         state.message = "error";
-        console.log(payload)
       });
   },
 

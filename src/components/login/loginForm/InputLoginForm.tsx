@@ -1,16 +1,21 @@
 import { useAppDispatch, useAppSelector } from "@/lib/hook";
 import { auth } from "@/lib/slices/loginSlice";
-import React, { useState } from "react";
+import { useRouter } from "next/navigation";
+import React, { useEffect, useState } from "react";
 
 function InputLoginForm() {
   const [dataForm, setdataForm] = useState({ username: "", password: "" });
   const [show, setShow] = useState(false);
   const dispatch = useAppDispatch();
   const message = useAppSelector((state) => state.loginState.message);
+  const router = useRouter();
 
+
+  useEffect(() => {
+    message === "fulfilled" ? router.push("/admin") : null;
+  }, [message,router]);
   const clickHandler = () => {
     dispatch(auth(dataForm));
-    
   };
 
   return (

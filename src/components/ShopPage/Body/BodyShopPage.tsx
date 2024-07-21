@@ -1,4 +1,4 @@
-import Cards from "@/components/cardShop/Cards";
+import Cards from "../cardShop/Cards";
 import React from "react";
 
 async function BodyShopPage() {

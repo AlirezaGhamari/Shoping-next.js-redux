@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import counterReducer from "../lib/slices/counterSlice";
 import loginRed from "./slices/loginSlice"
+import productsReducer from "./slices/productsSlice"
 export const makeStore = () => {
   return configureStore({
     reducer: {
       counterState: counterReducer,
       loginState: loginRed,
+      productsState:productsReducer,
     },
   });
 };
