@@ -2,12 +2,15 @@ import { configureStore } from "@reduxjs/toolkit";
 import counterReducer from "../lib/slices/counterSlice";
 import loginRed from "./slices/loginSlice"
 import productsReducer from "./slices/productsSlice"
+import errorReducer from "./slices/errorSlice"
+
 export const makeStore = () => {
   return configureStore({
     reducer: {
       counterState: counterReducer,
       loginState: loginRed,
       productsState:productsReducer,
+      errorState:errorReducer
     },
   });
 };

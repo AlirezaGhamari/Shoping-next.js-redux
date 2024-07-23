@@ -1,23 +1,28 @@
+import Loading from "@/components/Loading";
+import Error from "@/components/Error";
 import { useAppDispatch, useAppSelector } from "@/lib/hook";
 import { auth } from "@/lib/slices/loginSlice";
 import { useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 
 function InputLoginForm() {
   const [dataForm, setdataForm] = useState({ username: "", password: "" });
-  const [show, setShow] = useState(false);
-  const dispatch = useAppDispatch();
+  const [showPass, setShowPass] = useState(false);
+  const [showError, setShowError] = useState(true);
   const message = useAppSelector((state) => state.loginState.message);
+  const dispatch = useAppDispatch();
   const router = useRouter();
 
+  const clickHandlerError = () => {
+    setShowError(false);
+  };
 
   useEffect(() => {
     message === "fulfilled" ? router.push("/admin") : null;
-  }, [message,router]);
+  }, [message, router]);
   const clickHandler = () => {
     dispatch(auth(dataForm));
   };
-
   return (
     <>
       <div className="flex flex-col gap-3 w-full">
@@ -34,7 +39,7 @@ function InputLoginForm() {
         </div>
         <div>
           <input
-            type={show ? "text" : "password"}
+            type={showPass ? "text" : "password"}
             placeholder="password"
             value={dataForm.password}
             onChange={(e) =>
@@ -49,10 +54,10 @@ function InputLoginForm() {
           <input
             className="cursor-pointer"
             type="checkbox"
-            id="showPass"
-            onClick={() => setShow(!show)}
+            id="showPass1"
+            onClick={() => setShowPass(!showPass)}
           />
-          <label className="cursor-pointer" htmlFor="showPass">
+          <label className="cursor-pointer" htmlFor="showPass1">
             Show Password
           </label>
         </div>
@@ -64,6 +69,12 @@ function InputLoginForm() {
       >
         log in
       </button>
+      {message === "loading" ? <Loading /> : ""}
+      {message === "error" && showError === true ? (
+        <Error onclick={() => clickHandlerError()} errorText="Your Username or Password Is wrong"/>
+      ) : (
+        ""
+      )}
     </>
   );
 }

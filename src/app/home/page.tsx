@@ -1,14 +1,13 @@
-import Navbar from '@/components/Navbar/Navbar'
-import React from 'react'
+import Navbar from '@/components/Navbar/Navbar';
+import { useAppDispatch, useAppSelector } from '@/lib/hook';
+import React from 'react';
 
-function page() {
+function Page() {
   return (
     <div>
-      <Navbar/>
-      home
-      
+      <Navbar />
     </div>
-  )
+  );
 }
 
-export default page
+export default Page;

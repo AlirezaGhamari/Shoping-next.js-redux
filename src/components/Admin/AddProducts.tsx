@@ -2,12 +2,19 @@ import { useAppDispatch, useAppSelector } from "@/lib/hook";
 import { addProducts } from "@/lib/slices/productsSlice";
 import React, { useState } from "react";
 import Loading from "../Loading";
-import SuccessModal from "../SuccessModal"
+import Error from "@/components/Error";
+import Succes from "../Succes";
 
 function AddProducts() {
+  const [showSucces, setShowSucces] = useState(true);
+
   const dispatch = useAppDispatch();
   const mesage = useAppSelector((state) => state.productsState.message);
   const [data, setData] = useState({ title: "", price: "", category: "" });
+  const clickHandlerError = () => {
+    setShowSucces(false);
+  };
+
   return (
     <div className="flex flex-col gap-2 justify-center items-center w-[50%] h-[50%] bg-[#adcff9] rounded-lg">
       <h1 className="font-bold text-[40px] text-[#2a3f54]">Add Product</h1>
@@ -55,7 +62,12 @@ function AddProducts() {
       </button>
       
       {mesage === "loading" ? <Loading /> : ""}
-      {/* {mesage === "fulfilled" ? <SuccessModal /> : ""} */}
+      {mesage === "fulfilled" && showSucces === true ? (
+        <Succes succesText="Product Added" onclick={() => clickHandlerError()} />
+      ) : (
+        ""
+      )}
+
 
 
     </div>
