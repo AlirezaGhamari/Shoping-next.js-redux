@@ -25,7 +25,7 @@ function AddProducts() {
           placeholder="Category"
           value={data.category}
           onChange={(e) => setData({ ...data, category: e.target.value })}
-          className="w-full rounded-lg bg-[#73879c] outline-[#eca8a4] p-1 text-[15px] placeholder-white focus:placeholder:opacity-0"
+          className="w-full rounded-lg bg-[#73879c] outline-[#eca8a4] p-1 text-[15px] placeholder-white placeholder-opacity-60 focus:placeholder:opacity-0"
         />
       </div>
       <div className="w-[50%]">
@@ -34,7 +34,7 @@ function AddProducts() {
           placeholder="Title"
           value={data.title}
           onChange={(e) => setData({ ...data, title: e.target.value })}
-          className="w-full rounded-lg bg-[#73879c] outline-[#eca8a4] p-1 text-[15px] placeholder-white focus:placeholder:opacity-0"
+          className="w-full rounded-lg bg-[#73879c] outline-[#eca8a4] p-1 text-[15px] placeholder-white placeholder-opacity-60 focus:placeholder:opacity-0"
         />
       </div>
       <div className="w-[50%]">
@@ -43,7 +43,7 @@ function AddProducts() {
           placeholder="Price"
           value={data.price}
           onChange={(e) => setData({ ...data, price: e.target.value })}
-          className="w-full rounded-lg bg-[#73879c] outline-[#eca8a4] p-1 text-[15px] placeholder-white focus:placeholder:opacity-0"
+          className="w-full rounded-lg bg-[#73879c] outline-[#eca8a4] p-1 text-[15px] placeholder-white placeholder-opacity-60 focus:placeholder:opacity-0"
         />
       </div>
       <button
