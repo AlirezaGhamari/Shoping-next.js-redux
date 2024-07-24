@@ -17,7 +17,7 @@ function InputLoginForm() {
     if(message === "fulfilled") {
       setTimeout(() => {
         router.push("/admin");
-      }, 2000);
+      }, 1500);
     }
   }, [message, router]);
   const clickHandler = () => {
