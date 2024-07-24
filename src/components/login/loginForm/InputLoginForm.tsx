@@ -1,24 +1,24 @@
 import Loading from "@/components/Loading";
-import Error from "@/components/Error";
 import { useAppDispatch, useAppSelector } from "@/lib/hook";
 import { auth } from "@/lib/slices/loginSlice";
 import { useRouter } from "next/navigation";
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState } from "react";
+import 'react-toastify/dist/ReactToastify.css';
 
 function InputLoginForm() {
   const [dataForm, setdataForm] = useState({ username: "", password: "" });
   const [showPass, setShowPass] = useState(false);
-  const [showError, setShowError] = useState(true);
   const message = useAppSelector((state) => state.loginState.message);
   const dispatch = useAppDispatch();
   const router = useRouter();
 
-  const clickHandlerError = () => {
-    setShowError(false);
-  };
 
   useEffect(() => {
-    message === "fulfilled" ? router.push("/admin") : null;
+    if(message === "fulfilled") {
+      setTimeout(() => {
+        router.push("/admin");
+      }, 2000);
+    }
   }, [message, router]);
   const clickHandler = () => {
     dispatch(auth(dataForm));
@@ -70,11 +70,8 @@ function InputLoginForm() {
         log in
       </button>
       {message === "loading" ? <Loading /> : ""}
-      {message === "error" && showError === true ? (
-        <Error onclick={() => clickHandlerError()} errorText="Your Username or Password Is wrong"/>
-      ) : (
-        ""
-      )}
+
+      
     </>
   );
 }

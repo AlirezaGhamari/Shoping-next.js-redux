@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios  from "axios";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 export interface LoginState {
   token: string;
@@ -11,21 +12,23 @@ const initialState: LoginState = {
   message: "",
 };
 export const auth = createAsyncThunk(
-    "user/login",
-    async ({username,password}:{username:string,password:string}, { rejectWithValue }) => {
-      try {
-        let body = {
-          username: username,
-          password: password,
-        };
-        const res = await axios.post('https://dummyjson.com/user/login', body);
-        return res.data;
-      } catch (error: any) {
-        return rejectWithValue(error.response.data);
-      }
+  "user/login",
+  async (
+    { username, password }: { username: string; password: string },
+    { rejectWithValue }
+  ) => {
+    try {
+      let body = {
+        username: username,
+        password: password,
+      };
+      const res = await axios.post("https://dummyjson.com/user/login", body);
+      return res.data;
+    } catch (error: any) {
+      return rejectWithValue(error.response.data);
     }
-  );
-  
+  }
+);
 
 export const loginSlice = createSlice({
   name: "login",
@@ -33,6 +36,12 @@ export const loginSlice = createSlice({
   reducers: {},
 
   extraReducers: (builder) => {
+
+    
+    const error = () =>toast.error("your username or password is wrong");
+    const success = () => toast.success("welcome");
+    
+
     builder
       /***********auth*************/
       .addCase(auth.pending, (state) => {
@@ -40,14 +49,15 @@ export const loginSlice = createSlice({
       })
       .addCase(auth.fulfilled, (state, { payload }) => {
         state.message = "fulfilled";
-        state.token=payload.token
-
+        state.token = payload.token;
+        success()
       })
       .addCase(auth.rejected, (state, { payload }: any) => {
         state.message = "error";
+        error()
       });
+      
   },
-
 });
 
 // Action creators are generated for each case reducer function
