@@ -2,7 +2,6 @@ import { useAppDispatch, useAppSelector } from "@/lib/hook";
 import { addProducts } from "@/lib/slices/productsSlice";
 import React, { useState } from "react";
 import Loading from "../Loading";
-import Error from "@/components/Error";
 import Succes from "../Succes";
 
 function AddProducts() {

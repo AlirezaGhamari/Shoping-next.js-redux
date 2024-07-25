@@ -16,7 +16,7 @@ function page() {
           <AdminPage />
         </div>
       ) : (
-        <Error errorText="please login" onclick={() => router.push("/login")} />
+        <Error errorText="please login" onclick={() => router.replace("/login")} />
       )}
     </>
   );

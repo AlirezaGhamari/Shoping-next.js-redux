@@ -4,6 +4,7 @@ import NavbarItems from "./NavbarItems";
 import NavbarUser from "./NavbarUser";
 
 function Navbar() {
+
   return (
     <div className="grid grid-cols-10 text-[20px] text-white  bg-[#2a3f54] border ">
       <div className="col-span-2 flex justify-center items-center p-2 ">
