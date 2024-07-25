@@ -1,6 +1,11 @@
 import React from "react";
 
-function Error({ onclick ,errorText}: { onclick: any ,errorText:string}) {
+interface ErrorProps {
+  errorText: string;
+  onclick?: () => void; // Making onclick optional
+}
+
+function Error({ errorText, onclick }: ErrorProps) {
   return (
     <div>
       <>
