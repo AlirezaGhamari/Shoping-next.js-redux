@@ -1,13 +1,20 @@
-import AdminPage from '@/components/Admin/AdminPage'
-import Login from '@/components/login/Login'
-import React from 'react'
+"use client";
+
+import AdminPage from "@/components/Admin/AdminPage";
+import React from "react";
 
 function page() {
+  const tokenPresent = document.cookie.includes("token=");
+
   return (
-    <div className='h-full' >
-      <AdminPage/>
-    </div>
-  )
+    <>
+      {tokenPresent ? (
+        <div className="h-full">
+          <AdminPage />
+        </div>
+      ) : "please log in"}
+    </>
+  );
 }
 
-export default page
+export default page;

@@ -6,18 +6,13 @@ import { toast } from "react-toastify";
 export interface LoginState {
   token: string;
   message: string;
-  active: boolean;
 }
 
 const initialState: LoginState = {
   token: "",
   message: "",
-  active: false,
 };
 
-export const logoutRed=(state = initialState)=> {
-  state.active=false
-  }
 
 export const auth = createAsyncThunk(
   "user/login",
@@ -54,9 +49,9 @@ export const loginSlice = createSlice({
       .addCase(auth.fulfilled, (state, { payload }) => {
         state.message = "fulfilled";
         state.token = payload.token;
-        state.active = true;
         setCookie("token", payload.token);
-        success();
+        success(); 
+        
       })
       .addCase(auth.rejected, (state, { payload }: any) => {
         state.message = "error";

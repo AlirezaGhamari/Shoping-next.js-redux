@@ -1,15 +1,24 @@
-import Link from "next/link";
+"use client";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { FiUser } from "react-icons/fi";
 
 function IconAdmin() {
-  return (
+  const router = useRouter();
+
+  const clickHandler = () => {
+    const tokenPresent = document.cookie.includes("token=");
+
+    tokenPresent ? router.push("/admin") : router.push("/login");
+  };
+
+  return  (
     <div>
-      <Link href={"/login"}>
-        <FiUser className="w-[25px] h-[25px] hover:text-[#ff4955] hover:-translate-y-1 hover:scale-110 hover: duration-300" />
-      </Link>
+      <button onClick={clickHandler}>
+        <FiUser className="w-[25px] h-[25px] hover:text-[#ff4955] hover:-translate-y-1 hover:scale-110 hover:duration-300" />
+      </button>
     </div>
-  );
+  ) 
 }
 
 export default IconAdmin;
