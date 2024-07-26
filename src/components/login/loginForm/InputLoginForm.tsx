@@ -1,9 +1,10 @@
+import InputComponent from "@/components/InputComponent";
 import Loading from "@/components/Loading";
 import { useAppDispatch, useAppSelector } from "@/lib/hook";
 import { auth } from "@/lib/slices/loginSlice";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 
 function InputLoginForm() {
   const [dataForm, setdataForm] = useState({ username: "", password: "" });
@@ -12,9 +13,8 @@ function InputLoginForm() {
   const dispatch = useAppDispatch();
   const router = useRouter();
 
-
   useEffect(() => {
-    if(message === "fulfilled") {
+    if (message === "fulfilled") {
       setTimeout(() => {
         router.push("/admin");
       }, 1500);
@@ -27,25 +27,23 @@ function InputLoginForm() {
     <>
       <div className="flex flex-col gap-3 w-full">
         <div>
-          <input
+          <InputComponent
             type="text"
             placeholder="Username"
             value={dataForm.username}
-            onChange={(e) =>
+            onchange={(e) =>
               setdataForm({ ...dataForm, username: e.target.value })
             }
-            className="w-full rounded-lg bg-[#73879c] outline-[#eca8a4] p-1 text-[15px] placeholder-white placeholder-opacity-60  focus:placeholder:opacity-0"
           />
         </div>
         <div>
-          <input
+          <InputComponent
             type={showPass ? "text" : "password"}
             placeholder="password"
             value={dataForm.password}
-            onChange={(e) =>
+            onchange={(e) =>
               setdataForm({ ...dataForm, password: e.target.value })
             }
-            className="w-full rounded-lg bg-[#73879c] outline-[#eca8a4] p-1 text-[15px]  placeholder-white placeholder-opacity-60  focus:placeholder:opacity-0"
           />
         </div>
       </div>
@@ -70,8 +68,6 @@ function InputLoginForm() {
         log in
       </button>
       {message === "loading" ? <Loading /> : ""}
-
-      
     </>
   );
 }
