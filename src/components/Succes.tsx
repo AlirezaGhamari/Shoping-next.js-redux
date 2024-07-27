@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 
-function Succes({ onclick, succesText }: { onclick: any; succesText: string }) {
+interface SuccesProps {
+  onclick?:()=>void;
+  succesText: string;
+}
+
+function Succes({ onclick, succesText }: SuccesProps) {
+  const [show, setShow] = useState(true);
+
   return (
+    
     <div>
-      <>
-        <dialog className="fixed left-0 top-0 w-full h-full bg-black bg-opacity-50 z-50 overflow-auto backdrop-blur flex justify-center items-center">
+      {show ==true ? 
+       ( <dialog className="fixed left-0 top-0 w-full h-full bg-black bg-opacity-50 z-50 overflow-auto backdrop-blur flex justify-center items-center">
           <div className=" m-auto p-8">
             <div className="flex flex-col items-center">
               {/* loading */}
@@ -61,7 +69,7 @@ function Succes({ onclick, succesText }: { onclick: any; succesText: string }) {
                     <div className="mt-5 sm:mt-6">
                       <button
                         className="inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:text-sm"
-                        onClick={onclick}
+                        onClick={()=>{setShow(!show);{onclick}}}
                       >
                         OK
                       </button>
@@ -72,9 +80,8 @@ function Succes({ onclick, succesText }: { onclick: any; succesText: string }) {
               {/* end */}
             </div>
           </div>
-        </dialog>
-      </>
-    </div>
+        </dialog>): ""}
+    </div> 
   );
 }
 

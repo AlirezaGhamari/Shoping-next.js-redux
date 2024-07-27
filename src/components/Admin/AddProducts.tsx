@@ -6,14 +6,9 @@ import Succes from "../Succes";
 import InputComponent from "../InputComponent";
 
 function AddProducts() {
-  const [showSucces, setShowSucces] = useState(true);
-
   const dispatch = useAppDispatch();
-  const mesage = useAppSelector((state) => state.productsState.message);
+  var mesage = useAppSelector((state) => state.productsState.message);
   const [data, setData] = useState({ title: "", price: "", category: "" });
-  const clickHandlerError = () => {
-    setShowSucces(false);
-  };
 
   return (
     <div className="flex flex-col gap-2 justify-center items-center w-[50%] h-[50%] bg-[#adcff9] rounded-lg">
@@ -59,14 +54,7 @@ function AddProducts() {
       </button>
 
       {mesage === "loading" ? <Loading /> : ""}
-      {mesage === "fulfilled" && showSucces === true ? (
-        <Succes
-          succesText="Product Added"
-          onclick={() => clickHandlerError()}
-        />
-      ) : (
-        ""
-      )}
+      {mesage == "fulfilled" ? <Succes succesText="Product Added" /> : ""}
     </div>
   );
 }
