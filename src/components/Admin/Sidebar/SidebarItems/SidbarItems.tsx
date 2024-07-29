@@ -3,7 +3,7 @@ import SidbarItem from "./SidbarItem";
 import { IoHome } from "react-icons/io5";
 import { MdProductionQuantityLimits } from "react-icons/md";
 import { BsTable } from "react-icons/bs";
-import ItemsForItem from "./ItemItems/itemsForItem";
+import ItemsForItem from "./ItemItems/ItemsForItem";
 
 const SidbarItems = () => {
   const data: any[] = [
@@ -22,7 +22,7 @@ const SidbarItems = () => {
   };
 
   return (
-    <div className="text-[#e0e2e3]">
+    <div className="text-[#e0e2e3] ">
       {data.map((i: any, index: number) => (
         <>
           <SidbarItem

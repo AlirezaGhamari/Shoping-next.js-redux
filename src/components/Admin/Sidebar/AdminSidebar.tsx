@@ -1,6 +1,6 @@
 import React from 'react'
 import Specifications from './Specifications/Specifications'
-import SidbarItems from './SidebarItems/sidbarItems/SidbarItems'
+import SidbarItems from './SidebarItems/SidbarItems'
 
 function AdminSidebar() {
   return (

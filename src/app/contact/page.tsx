@@ -1,23 +1,19 @@
-import Navbar from '@/components/Navbar/Navbar';
-import React from 'react';
-import type { Metadata } from 'next'
-import { Accordion } from '@/components/Accordion';
-import { AccordionItem } from '@/components/AccordionItem';
- 
+import Navbar from "@/components/Navbar/Navbar";
+import React from "react";
+import type { Metadata } from "next";
+
 export const metadata: Metadata = {
-  title: 'Contact page',
-  description: 'about Contact',
-}
+  title: "Contact page",
+  description: "about Contact",
+};
 
 function page() {
-  
   return (
     <>
-      <Navbar/>
+      <Navbar />
       <p>Contact</p>
-      <Accordion/>
     </>
   );
 }
 
-export default page
+export default page;

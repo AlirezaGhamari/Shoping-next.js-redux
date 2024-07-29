@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-import AddProducts from "../Sidebar/SidebarItems/sidbarItems/ItemItems/productsItems/Items/AddProducts";
 import { useAppSelector } from "@/lib/hook";
 import Login from "@/components/login/Login";
+import AddProducts from "../Sidebar/SidebarItems/ItemItems/productsItems/Items/AddProducts";
 
 function AdminContent() {
   const showName = useAppSelector((state) => state.contentPageState.idPage);

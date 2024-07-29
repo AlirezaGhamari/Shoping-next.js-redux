@@ -6,7 +6,7 @@ function ItemsForItem({ children ,id}: { children: React.ReactNode ,id:string}) 
     const dispatch = useAppDispatch();
 
     return (
-        <div onClick={() => dispatch(showContant(id))}>
+        <div className='text-[14px]  cursor-pointer hover:-skew-x-12 hover:translate-x-5 hover:text-white hover:text-[15px] transition-all duration-500 ' onClick={() => dispatch(showContant(id))}>
             {children}
         </div>
     );

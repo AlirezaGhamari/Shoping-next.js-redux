@@ -25,6 +25,9 @@ function InputLoginForm() {
   };
   return (
     <>
+    <div className='text-[35px] text-[#2a3f54] font-extrabold'>
+      Login User
+    </div>
       <div className="flex flex-col gap-3 w-full">
         <div>
           <InputComponent

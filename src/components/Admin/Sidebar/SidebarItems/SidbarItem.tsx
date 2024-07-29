@@ -19,7 +19,7 @@ const SidbarItem = ({
   return (
     <>
       <div
-        className="flex justify-between items-center p-2 py-4 cursor-pointer"
+        className="flex justify-between items-center p-2 py-4 cursor-pointer hover:text-white hover:bg-[#263a4f] "
         onClick={onClick}
       >
         <div className="flex items-center gap-2">
@@ -29,7 +29,7 @@ const SidbarItem = ({
         <div>{open ? <FaChevronUp /> : <FaChevronDown />}</div>
       </div>
       {open && (
-        <div className="bg-[#3f5f7f]  p-2 flex items-center justify-center">
+        <div className="bg-[#334d67]  p-2 flex items-center justify-center">
           <div className="flex flex-col  w-[80%]">{children}</div>
         </div>
       )}

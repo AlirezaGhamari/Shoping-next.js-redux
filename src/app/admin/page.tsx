@@ -1,11 +1,10 @@
-"use client";
-
+"use client"
 import AdminPage from "@/components/Admin/AdminPage";
 import Error from "@/components/Error";
 import { useRouter } from "next/navigation";
 import React from "react";
 
-function page() {
+function Page() {
   const tokenPresent = document.cookie.includes("token=");
   const router = useRouter();
 
@@ -22,4 +21,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;
