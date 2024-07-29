@@ -19,7 +19,7 @@ import Loading from "@/components/Loading";
   return (
     <div className="grid grid-cols-4 gap-4 p-5 text-black bg-slate-100">
       {message==="loading" ?  <Loading /> :null}
-      {data.map((item:{id:number,title:string,price:string , images:string , category:string}) => (
+      {data?.map((item:{id:number,title:string,price:string , images:string , category:string}) => (
         <Card 
         key={item.id}
          price={item.price}

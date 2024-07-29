@@ -3,7 +3,7 @@ import SidbarItem from "./SidbarItem";
 import { IoHome } from "react-icons/io5";
 import { MdProductionQuantityLimits } from "react-icons/md";
 import { BsTable } from "react-icons/bs";
-import ProductsItems from "./ItemItems/productsItems/ProductsItems";
+import ItemsForItem from "./ItemItems/itemsForItem";
 
 const SidbarItems = () => {
   const data: any[] = [
@@ -11,9 +11,9 @@ const SidbarItems = () => {
     {
       title: "Products",
       icon: <MdProductionQuantityLimits />,
-      content: <ProductsItems />,
+      content: <ItemsForItem id={"AddProducts"}>AddProducts</ItemsForItem>,
     },
-    { title: "Tables", icon: <BsTable />, content: "ddd" },
+    { title: "Tables", icon: <BsTable />, content: <ItemsForItem id={"Login"}>Login</ItemsForItem> },
   ];
   const [indexopen, setIndexOpen] = useState<number>(9999);
 

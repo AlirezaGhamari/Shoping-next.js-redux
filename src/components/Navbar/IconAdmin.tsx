@@ -9,7 +9,7 @@ function IconAdmin() {
   const clickHandler = () => {
     const tokenPresent = document.cookie.includes("token=");
 
-    tokenPresent ? router.replace("/admin") : router.replace("/login");
+    tokenPresent ? router?.replace("/admin") : router?.replace("/login");
   };
 
   return  (

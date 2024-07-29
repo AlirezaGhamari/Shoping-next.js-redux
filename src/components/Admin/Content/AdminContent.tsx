@@ -1,13 +1,17 @@
-"use client"
+"use client";
 import React from "react";
-import AddProducts from "../Sidebar/SidebarItems/mainItems/productsItems/Items/AddProducts";
-import Logout from "../Sidebar/Specifications/Logout";
+import AddProducts from "../Sidebar/SidebarItems/sidbarItems/ItemItems/productsItems/Items/AddProducts";
+import { useAppSelector } from "@/lib/hook";
+import Login from "@/components/login/Login";
 
 function AdminContent() {
-  
-  return <div className=" w-full h-full flex justify-center items-center">
-
-  </div>;
+  const showName = useAppSelector((state) => state.contentPageState.idPage);
+  return (
+    <div className=" w-full h-full flex justify-center items-center">
+      {showName=="AddProducts" ? <AddProducts /> : ""}
+      {showName=="Login" ? <Login /> : ""}
+    </div>
+  );
 }
 
 export default AdminContent;

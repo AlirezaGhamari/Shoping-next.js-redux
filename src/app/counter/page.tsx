@@ -1,6 +1,6 @@
 "use client";
 import { useAppDispatch, useAppSelector } from "@/lib/hook";
-import { plusCounterAction } from "@/lib/slices/counterSlice";
+import { plusCounterAction } from "@/lib/slices/contentPageSlice";
 import React from "react";
 
 function page() {

@@ -1,13 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
-import counterReducer from "../lib/slices/counterSlice";
+import counterReducer from "./slices/contentPageSlice";
 import loginRed from "./slices/loginSlice"
 import productsReducer from "./slices/productsSlice"
 import errorReducer from "./slices/errorSlice"
+import contentPageReducer from "./slices/contentPageSlice"
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
-      counterState: counterReducer,
+      contentPageState: contentPageReducer,
       loginState: loginRed,
       productsState:productsReducer,
       errorState:errorReducer
