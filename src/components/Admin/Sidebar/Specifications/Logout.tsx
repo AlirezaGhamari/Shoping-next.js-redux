@@ -8,7 +8,7 @@ function Logout() {
 
   const cliclkHandler = () => {
     deleteCookie("token");
-    router.push("/login");
+    router.push("/home");
   };
   return (
     <button onClick={() => cliclkHandler()} className=" text-red-600" id="but">

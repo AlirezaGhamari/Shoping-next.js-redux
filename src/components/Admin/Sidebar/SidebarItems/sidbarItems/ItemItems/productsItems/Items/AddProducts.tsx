@@ -1,9 +1,9 @@
 import { useAppDispatch, useAppSelector } from "@/lib/hook";
 import { addProducts } from "@/lib/slices/productsSlice";
 import React, { useState } from "react";
-import Loading from "../Loading";
-import Succes from "../Succes";
-import InputComponent from "../InputComponent";
+import Loading from "../../../../../../Loading";
+import Succes from "../../../../../../Succes";
+import InputComponent from "../../../../../../InputComponent";
 
 function AddProducts() {
   const dispatch = useAppDispatch();

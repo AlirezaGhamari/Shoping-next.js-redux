@@ -1,13 +1,13 @@
 import React from 'react'
 import Specifications from './Specifications/Specifications'
-import MainSidbar from './Main/MainSidbar'
+import SidbarItems from './SidebarItems/sidbarItems/SidbarItems'
 
 function AdminSidebar() {
   return (
     <div className=''>
         
       <Specifications/>
-      <MainSidbar/>
+      <SidbarItems/>
       
     </div>
   )
