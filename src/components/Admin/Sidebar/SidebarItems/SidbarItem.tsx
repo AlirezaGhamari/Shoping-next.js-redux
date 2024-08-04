@@ -29,7 +29,7 @@ const SidbarItem = ({
         <div>{open ? <FaChevronUp /> : <FaChevronDown />}</div>
       </div>
       {open && (
-        <div className="bg-[#334d67]  p-2 flex items-center justify-center">
+        <div className="bg-[#334d67]  p-2 flex items-center justify-center ">
           <div className="flex flex-col  w-[80%]">{children}</div>
         </div>
       )}

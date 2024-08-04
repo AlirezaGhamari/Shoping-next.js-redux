@@ -24,8 +24,8 @@ const SidbarItems = () => {
   return (
     <div className="text-[#e0e2e3] ">
       {data.map((i: any, index: number) => (
-        <>
           <SidbarItem
+
             key={index}
             title={i.title}
             icon={i.icon}
@@ -34,7 +34,6 @@ const SidbarItems = () => {
           >
             {i.content}
           </SidbarItem>
-        </>
       ))}
     </div>
   );
